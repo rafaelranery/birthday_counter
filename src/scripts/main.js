@@ -1,5 +1,5 @@
 
-const birthdayDate = new Date("Jul 21, 2022 19:00:00");
+const birthdayDate = new Date("Jul 21, 2023 19:00:00");
 const birthdayTimeStamp = birthdayDate.getTime();
 
 
@@ -13,6 +13,8 @@ let counterTime = setInterval( function() {
     let daysMs = 1000 * 60 * 60 * 24;
     let hourMs = 1000 * 60 * 60;
     let minMs = 1000 * 60;
+
+    let remainingMs = birthdayTimeStamp - actualTimeStamp;
     
 
     let daysToBirthday = Math.floor((birthdayTimeStamp - actualTimeStamp) / (daysMs));
@@ -29,8 +31,9 @@ let counterTime = setInterval( function() {
     displayDate.innerHTML = `${daysToBirthday} dias ${hoursToBirthday} horas ${minToBirthday} min ${secondsToBirthday} s`
     
 
-    if (actualTimeStamp < 0 ) {
+    if (remainingMs < 0 ) {
         displayDate.innerHTML = 'Evento Expirado!!!'
+        clearInterval(counterTime)
     }
-    
+
 }, 1000)
