@@ -1,0 +1,53 @@
+.event {
+    background-color: #f1f1f1;
+    border-bottom: 5px pink dotted;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 56px 0;
+        gap: 32px;
+        max-width: 70%;
+
+    }
+    
+    &--reverse {
+        .container {
+            flex-direction: row-reverse;
+        }
+    }
+    
+    
+    &__about {
+        &__title {
+            color: #000;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        &__description {
+            color: #000;
+        }
+    }
+    
+    &__img {
+        max-width: 360px;
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    @media (max-width: 640px) {
+        .container {
+            display: block;
+            text-align: center;
+        }
+
+        &__about {
+            margin-bottom: 16px;
+        }
+
+        &__img {
+            max-width: 100%;
+        }
+    }
+}
