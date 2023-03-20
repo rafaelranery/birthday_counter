@@ -31,6 +31,6 @@ let counterTime = setInterval( function() {
 
     if (actualTimeStamp < 0 ) {
         displayDate.innerHTML = 'Evento Expirado!!!'
-
     }
+    
 }, 1000)
